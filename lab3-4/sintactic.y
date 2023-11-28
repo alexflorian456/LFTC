@@ -1,5 +1,15 @@
 %{
+#include<stdio.h>
+#include<stdlib.h>
 
+extern char * yytext;
+extern int line;
+extern int yylex();
+extern int yyerror(const char* msg)
+{
+    printf("%s : line %d : %s\n", msg, line, yytext);
+    exit(1);
+}
 %}
 
 %token ID CONST IF ELSE WHILE COUT EXTRACTION INT INSERTION HASHTAG CPR OPR PLUS NAMESPACE SEMICOLON MAIN ASSIGN LT GT IOSTREAM VOID USING ENDL STD INCLUDE CIN OCB CCB STAR MINUS NEQUALS CHAR CIRCLE
@@ -8,10 +18,14 @@
 
 program : HASHTAG INCLUDE LT IOSTREAM GT USING NAMESPACE STD SEMICOLON VOID MAIN OPR CPR OCB instrs CCB
 
-instrs : %empty
-       | instr
-       | instr instrs
+instrs : /* epsilon */
+       | instr_list
        ;
+
+
+instr_list : instr
+           | instr instr_list
+           ;
 
 instr : instr_decl
       | instr_assign
@@ -63,19 +77,6 @@ instr_loop : WHILE OPR expr CPR OCB instrs CCB
 %%
 
 int main(){
-    TS = (char**)malloc(m * sizeof(char*));
-    for(int i = 0; i < m; i++){
-        TS[i] = (char*)malloc(100*sizeof(char));
-        TS[i][0] = '\0';
-    }
-    printf("FIP:\n");
-    yylex();
-    printf("\nTS:\n");
-    for(int i = 0; i < m; i++){
-        if(strlen(TS[i])){
-            printf("%d %s\n", i, TS[i]);
-        }
-    }
     yyparse();
     return 0;
 }
