@@ -4,6 +4,9 @@
 #include<stdlib.h>
 #include<string.h>
 
+#include"sintactic.tab.h"
+
+
 int yywrap(){
     return 1;
 }
