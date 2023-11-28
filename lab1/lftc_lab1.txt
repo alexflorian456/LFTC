@@ -1,0 +1,97 @@
+1.
+
+<program> ::=
+#include<iostream>
+using namespace std;void main(){ <instrs> }
+
+<instrs> ::= epsilon | <instr> | <instr><instrs>
+<instr> ::= <instr_decl> | <instr_assign> | <instr_read> | <instr_write> | <instr_cond> | <instr_loop>
+
+<instr_decl> ::= <dtype> ID;
+ID ::= <letter> | <letter><chars>
+<letter> ::= A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+<chars> ::= <char> | <char><chars>
+<char> ::= <letter> | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+<dtype> ::= int | char | circle
+
+<instr_assign> ::= ID = <expr>;
+<expr> ::= ID | CONST | ID <operator><expr> | CONST <operator><expr>
+CONST ::= <integer> | <decimal>
+<integer> ::= 0 | <non_zero_digit><digit_list>
+<non_zero_digit> ::= 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9-
+<digit_list> ::= epsilon | <digit> | <digit><digit_list>
+<digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+<decimal> ::= <integer>.<digit_list> | .<non_empty_digit_list>
+<non_empty_digit_list> ::= <digit> | <digit><digit_list> 
+<operator> ::= * | - | + | != | >
+
+<instr_read> ::= cin >> ID;
+<instr_write> ::= cout << <expr> << endl;
+<instr_cond> ::= if( <expr> ){ <instrs> }else{ <instrs> }
+<instr_loop> ::= while( <expr> ){ <instrs> }
+
+2.
+#include<iostream>
+using namespace std;
+void main(){
+	circle r;
+	cin >> r;
+	cout << 2 * 3.14 * r << endl;
+	cout << 3.14 * r * r << endl;
+}
+
+#include<iostream>
+using namespace std;
+void main(){
+	int a;
+	int b;
+	cin >> a;
+	cin >> b;
+	while(a != b){
+		if(a > b){
+			a = a - b;
+		}
+		else{
+			b = b - a;
+		}
+	}
+	cout << a << endl;
+}
+
+#include<iostream>
+using namespace std;
+void main(){
+	int n;
+	int x;
+	int s;
+	s = 0;
+	cin >> n;
+	while(n){
+		cin >> x;
+		s = s + x;
+		n = n - 1;
+	}
+	cout << s << endl;
+}
+
+3. 
+
+Erori atat in MLP cat si in C++:
+void main(){
+	int a - b; // nu poti declara o expresie
+	a = 1 // nu am pus ;
+}
+
+Erori in MLP dar nu in C++;
+void main(){
+	int a=5; // nu este definita atribuirea la declaratie
+	if(a == 5){
+		a = a - 1;
+	} // nu este definita structura conditionala fara else
+}
+
+Activate lab:
+nu se pot declara arrayuri
+nu poti sa ai program gol
+nu poti declara constante care contin 0 ex. 101
+poti declara o variabila numele unui keyword

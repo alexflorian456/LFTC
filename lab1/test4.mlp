@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+void main(){
+	int n;
+	int x;
+	int s;
+	s = 0;
+	cin >> n;
+	while(n){
+		cin >> x;
+		s = s + x;
+		n = n - 1;
+	}
+	cout << s << endl;
+}

@@ -1,0 +1,8 @@
+#include<iostream>
+using namespace std;
+void main(){
+	circle r;
+	cin >> r;
+	cout << 2 * 3.14 * r << endl;
+	cout << 3.14 * r * r << endl;
+}
