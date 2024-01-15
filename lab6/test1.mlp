@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int a;
+    int b;
+    cin>>a;
+    cin>>b;
+    a=a+b*a;
+    b=a/b-1;
+    cout<<a<<endl;
+    cout<<b<<endl;
+    return 0;
+}

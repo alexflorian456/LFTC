@@ -1,0 +1,22 @@
+A-> # i n c l u d e < i o s t r e a m > u s i n g n a m e s p a c e s t d ; v o i d m a i n ( ) { B } 
+B-> C | B C 
+C-> D | E | F | G | H | I 
+D-> J K ; 
+K-> L | L M 
+L-> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+M-> N | M N 
+N-> L | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 
+J-> i n t | c h a r | c i r c l e 
+E-> K = O ;
+O-> K | P | O Q K | O Q P 
+P-> R | S 
+R-> 0 | T | T U
+T-> 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 
+U-> V | U V 
+V-> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 
+S-> R . U 
+Q-> * | - | + | ! = | > 
+F-> c i n > > K ;   
+G-> c o u t < < O < < e n d l ; 
+H-> i f ( O ) { B } e l s e { B } 
+I-> w h i l e ( O ) { B } 
